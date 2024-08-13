@@ -33,7 +33,9 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/'><img className="w-36" src="/src/assets/logo.png" alt="" /></Link>
+                    <Link to='/'>
+                        <img className="w-36" src="/src/assets/logo.png" alt="" />
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -43,7 +45,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <a className="btn">Login</a>
                 </div>
             </div>
         </div>
