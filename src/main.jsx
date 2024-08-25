@@ -11,6 +11,7 @@ import Root from './root/Root';
 import Home from './home/Home';
 import About from './about/About';
 import Error from './shared/Error';
+import Login from './shared/Login';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:'/about',
         element:<About></About>
+      },
+      {
+        path:'login',
+        element:<Login></Login>
       }
     ]
   },

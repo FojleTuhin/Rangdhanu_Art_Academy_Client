@@ -11,16 +11,10 @@ const Banner = () => {
             <Carousel className="text-center">
                 <div>
                     <img src={img3} />
-                    
-
                 </div>
                 <div className="relative">
                     <img src={img2} />
                 </div>
-               
-
-
-
             </Carousel>
 
         </div>
