@@ -80,7 +80,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className=" bg-black bg-opacity-50 text-white border-none">Login</a>
+                    <a className=" bg-[#508C9B] px-4 py-2 rounded-full text-white border-none">Login</a>
                 </div>
             </div>
         </div>
