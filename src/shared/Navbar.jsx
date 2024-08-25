@@ -8,8 +8,8 @@ const Navbar = () => {
         <li className="py-2 px-4">Contact</li>
     </>
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className="">
+            <div className="navbar fixed z-40 bg-black bg-opacity-30 text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -34,7 +34,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to='/'>
-                        <img className="w-36" src="/src/assets/logo.png" alt="" />
+                        {/* <img className="w-36" src="/src/assets/logo.png" alt="" /> */}
+                        <p>Rangdhanu </p>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
