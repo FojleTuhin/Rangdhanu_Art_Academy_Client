@@ -1,3 +1,4 @@
+import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -22,6 +23,12 @@ const Login = () => {
 
                     <br />
                     <button className="md:w-[70%] w-full px-4 py-2 mt-5 bg-green-500 rounded-lg text-white font-bold" type="submit">Sign Up</button>
+
+
+                    <div className="text-center justify-center  md:w-[70%] font-bold mt-6">
+                        <p >Or Sign in with</p>
+                        <span className="flex justify-center mt-2"><FaGoogle className="text-3xl "/></span>
+                    </div>
 
                 </div>
 
