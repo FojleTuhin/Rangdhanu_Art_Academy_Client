@@ -1,18 +1,12 @@
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const links = <>
-        <li className="py-2 px-4">Home</li>
-        <li className="py-2 px-4">Gallery</li>
-        <li className="py-2 px-4">Admission</li>
-        <li className="py-2 px-4">Contact</li>
-    </>
+
     return (
-        <div className="">
-            <div className="navbar fixed z-40 bg-black bg-opacity-30 text-white">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <div>
+            <div className="navbar bg-black bg-opacity-50 fixed z-30 text-white">
+                <div className="navbar-start ">
+                    <div className="dropdown ">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden ">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -28,25 +22,65 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            {/* add links */}
-                            {links}
+                            className="menu menu-sm dropdown-content bg-black bg-opacity-85  rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li>
+                                <a>Academic</a>
+                                <ul className="p-2">
+                                    <li><a>Teachers</a></li>
+                                    <li><a>Departments</a></li>
+                                    <li><a>Academic Rules</a></li>
+                                    <li><a>Academic Calender</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Admission</a>
+                                <ul className="p-2">
+                                    <li><a>Apply Online</a></li>
+                                    <li><a>Tuition Fees</a></li>
+                                    <li><a>Contact</a></li>
+                                </ul>
+                            </li>
+                            <li><a>Photo Gallery</a></li>
                         </ul>
                     </div>
-                    <Link to='/'>
-                        {/* <img className="w-36" src="/src/assets/logo.png" alt="" /> */}
-                        <p>Rangdhanu </p>
-                    </Link>
+                    <a className="btn btn-ghost text-xl">daisyUI</a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className="menu menu-horizontal px-1 gap-3">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li>
+                            <details>
+                                <summary className="mx-5">Academic</summary>
+                                <ul className="p-1 w-full bg-black bg-opacity-85">
+                                    <li ><a className="p-2">Teachers</a></li>
+                                    <li ><a className="p-2">Departments</a></li>
+                                    <li ><a className="p-2">Academic rules</a></li>
+                                    <li ><a className="p-2">Academic Calender</a></li>
+                                   
+                                </ul>
 
-                        {/* add links */}
-                        {links}
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary className="mx-5">Admission</summary>
+                                <ul className="p-1 w-full bg-black bg-opacity-85">
+                                    <li ><a className="p-2">Apply Online</a></li>
+                                    <li ><a className="p-2">Tuition Fees</a></li>
+                                    <li ><a className="p-2">Contact</a></li>
+                                   
+                                </ul>
+
+                            </details>
+                        </li>
+                        <li><a>Photo Gallery</a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <a className=" bg-black bg-opacity-50 text-white border-none">Login</a>
                 </div>
             </div>
         </div>
