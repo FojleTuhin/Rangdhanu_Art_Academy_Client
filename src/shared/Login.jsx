@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../firebase/FirebaseProvider";
@@ -8,6 +8,7 @@ const Login = () => {
 
     const { signIn, googleLogin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [error, setError] = useState('');
 
 
     const handleLogin = (e) => {
@@ -19,9 +20,14 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result);
+                navigate('/');
+            })
+            .catch(error=>{
+                console.log(error);
+                setError('Email or password do not match');
             })
 
-        navigate('/');
+
 
     }
 
@@ -32,12 +38,19 @@ const Login = () => {
                 console.log(result);
                 navigate('/');
             })
+            .catch(error=>{
+                console.log(error);
+            })
+
     }
 
 
 
     return (
         <div className="flex flex-col bg-[url('https://i.ibb.co/1mms5rM/Green-Modern-Plant-Store-Login-Page-Desktop-Prototype.jpg')] min-h-screen bg-cover">
+
+
+        
             <div className="flex gap-5 justify-end text-white p-10 font-bold">
                 <Link to='/' className="link-hover">Home</Link>
                 <Link to='/signUp' className="link-hover">Sign up</Link>
@@ -50,13 +63,16 @@ const Login = () => {
 
                     <form onSubmit={handleLogin}>
                         <p className="mt-4 mb-1 px-4">E-mail</p>
-                        <input className="lg:w-[70%] w-full px-4 py-1  bg-black bg-opacity-30 rounded-lg" type="email" name="email" required placeholder="fojletuhin@gmail.com" />
+                        <input className="lg:w-[70%] w-full px-4 py-1  bg-black bg-opacity-30 rounded-lg" type="email" name="email" required placeholder="abc@gmail.com" />
 
 
                         <p className="mt-4 mb-1 px-4">Password</p>
                         <input className="lg:w-[70%] w-full px-4 py-1  bg-black bg-opacity-30 rounded-lg" type="password" name="password" required placeholder="**********" />
 
                         <br />
+                        {
+                            error && <p className=" lg:w-[70%] mt-5 text-center text-red-500">{error}</p>
+                        }
                         <button className="lg:w-[70%] w-full px-4 py-2 mt-5 bg-green-500 rounded-lg text-white font-bold" type="submit">Login</button>
                     </form>
 

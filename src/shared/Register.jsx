@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../firebase/FirebaseProvider";
@@ -8,6 +8,7 @@ const Register = () => {
 
     const { createUser, updateUser, googleLogin } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [error, setError] = useState('');
 
     const handleSignup = (e)=>{
         e.preventDefault()
@@ -19,7 +20,7 @@ const Register = () => {
 
 
         if (password.length < 6) {
-            console.log('Wrong');
+            setError('6 digit minimum')
             return
         }
 
@@ -66,7 +67,7 @@ const Register = () => {
 
 
                             <p className="mt-4 mb-1 px-4">E-mail</p>
-                            <input className="lg:w-[70%] w-full px-4 py-1  bg-black bg-opacity-30 rounded-lg" type="email" name="email"  required placeholder="fojletuhin@gmail.com" />
+                            <input className="lg:w-[70%] w-full px-4 py-1  bg-black bg-opacity-30 rounded-lg" type="email" name="email"  required placeholder="abc@gmail.com" />
 
 
                             <p className="mt-4 mb-1 px-4">Photo URL</p>
@@ -77,6 +78,10 @@ const Register = () => {
                             <input className="lg:w-[70%] w-full px-4 py-1  bg-black bg-opacity-30 rounded-lg" type="password" name="password" required placeholder="**********" />
 
                             <br />
+                            {
+                                error &&
+                                <p className="lg:w-[70%] text-center text-red-500 mt-5">{error}</p>
+                            }
                             <button className="lg:w-[70%] w-full px-4 py-2 mt-5 bg-green-500 rounded-lg text-white font-bold" type="submit">Sign up</button>
                         </form>
 
