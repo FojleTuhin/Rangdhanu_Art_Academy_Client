@@ -13,6 +13,7 @@ import About from './about/About';
 import Error from './shared/Error';
 import Login from './shared/Login';
 import Register from './shared/Register';
+import FirebaseProvider from './firebase/FirebaseProvider';
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <FirebaseProvider>
     <RouterProvider router={router} />
+    </FirebaseProvider>
   </React.StrictMode>,
 )

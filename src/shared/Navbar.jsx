@@ -1,6 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../firebase/FirebaseProvider";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () =>{
+        logOut()
+        .then(result=>{
+            console.log('Logout');
+        })
+    }
 
     return (
         <div>
@@ -81,7 +91,20 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='login'><a className=" bg-[#508C9B] px-4 py-2 rounded-full text-white border-none">Login</a></Link>
+                    {
+                        user ?
+
+                           
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className=" m-1"><img className="lg:h-[50px] lg:w-[50px] h-[40px] w-[40px] rounded-full" src={user?.photoURL} alt="user image" /></div>
+                                <ul tabIndex={0} className="dropdown-content menu bg-black bg-opacity-50 rounded-box z-[1] w-52 p-2 shadow">
+                                    <li><a>{user?.displayName}</a></li>
+                                    <li><a onClick={handleLogOut}>logOut</a></li>
+                                </ul>
+                            </div>
+                            :
+                            <Link to='login'><a className=" bg-[#508C9B] px-4 py-2 rounded-full text-white border-none">Login</a></Link>
+                    }
                 </div>
             </div>
         </div>
