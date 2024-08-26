@@ -12,6 +12,7 @@ import Home from './home/Home';
 import About from './about/About';
 import Error from './shared/Error';
 import Login from './shared/Login';
+import Register from './shared/Register';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path:'login',
         element:<Login></Login>
+      },
+      {
+        path:'signUp',
+        element:<Register></Register>
       }
     ]
   },
