@@ -101,7 +101,7 @@ const Navbar = () => {
                                 <div tabIndex={0} role="button" className=" m-1"><img className="lg:h-[50px] lg:w-[50px] h-[40px] w-[40px] rounded-full" src={user?.photoURL} alt="user image" /></div>
                                 <ul tabIndex={0} className="dropdown-content menu bg-black bg-opacity-85 rounded-box z-[1] w-52 p-2 shadow">
                                     <li><a>{user?.displayName}</a></li>
-                                    <li><a><Link>Dashboard</Link></a></li>
+                                    <li><a><Link to='/dashboard'>Dashboard</Link></a></li>
 
                                     <li><a onClick={handleLogOut}>logOut</a></li>
                                 </ul>

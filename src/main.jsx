@@ -14,6 +14,7 @@ import Error from './shared/Error';
 import Login from './shared/Login';
 import Register from './shared/Register';
 import FirebaseProvider from './firebase/FirebaseProvider';
+import Dashboard from './dashboard/Dashboard';
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:'/dashboard',
+    element:<Dashboard></Dashboard>,
+    
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
