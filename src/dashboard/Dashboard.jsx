@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ActivityIcon, LayoutGridIcon, ListIcon, MenuIcon, MountainIcon, SaveIcon, UsersIcon } from "lucide-react";
@@ -6,12 +6,14 @@ import { MdReviews } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "@/firebase/FirebaseProvider";
 // import useUserRole from "@/hooks/useUserRole";
+import logo from '../assets/logo.png'
 
 
 const Dashboard = () => {
 
 
     // const [userRole, refetch] = useUserRole();
+    const navigate = useNavigate();
 
     const userRole = true;
 
@@ -22,6 +24,7 @@ const Dashboard = () => {
         logOut()
             .then(result => {
                 console.log(result);
+                navigate('/');
             })
             .catch()
     }
@@ -33,8 +36,9 @@ const Dashboard = () => {
                 <div className="flex h-full flex-col justify-between py-6 px-4">
                     <div className="space-y-6">
                         <Link to='/' className="flex items-center gap-2 font-bold" prefetch={false}>
-                            <MountainIcon className="h-6 w-6" />
-                            <span className="text-lg">ParcelPioneer</span>
+                            {/* <MountainIcon className="h-6 w-6" /> */}
+                            <img src={logo} className="h-20 " alt="" />
+                            {/* <span className="text-lg">Rangdhanu</span> */}
                         </Link>
 
                         {/* user dashboard. */}
