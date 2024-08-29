@@ -15,7 +15,9 @@ const Dashboard = () => {
     // const [userRole, refetch] = useUserRole();
     const navigate = useNavigate();
 
-    const userRole = true;
+    const userRole ={
+        role: 'admin'
+    }
 
 
     const { logOut } = useContext(AuthContext);
@@ -159,8 +161,9 @@ const Dashboard = () => {
                 <header className="sticky top-0 z-10 border-b bg-white px-4 py-3 dark:border-gray-800 dark:bg-gray-900 lg:hidden">
                     <div className="flex items-center justify-between">
                         <Link to='/' className="flex items-center gap-2 font-bold" prefetch={false}>
-                            <MountainIcon className="h-6 w-6" />
-                            <span className="text-lg">ParcelPioneer</span>
+                            {/* <MountainIcon className="h-6 w-6" /> */}
+                            {/* <span className="text-lg">ParcelPioneer</span> */}
+                            <img src={logo} className="h-16 " alt="" />
                         </Link>
                         <Sheet>
                             <SheetTrigger asChild>
