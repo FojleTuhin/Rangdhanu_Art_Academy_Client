@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import Counting from "./Counting";
 
 const Home = () => {
    
@@ -7,11 +8,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="max-w-6xl mx-auto">
-               
-
-
-            </div>
+            <Counting></Counting>
+          
         </div>
     );
 };

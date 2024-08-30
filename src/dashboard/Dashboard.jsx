@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ActivityIcon, LayoutGridIcon, ListIcon, MenuIcon, MountainIcon, SaveIcon, UsersIcon } from "lucide-react";
+import { ActivityIcon, LayoutGridIcon, ListIcon, MenuIcon, SaveIcon, UsersIcon } from "lucide-react";
 import { MdReviews } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "@/firebase/FirebaseProvider";
