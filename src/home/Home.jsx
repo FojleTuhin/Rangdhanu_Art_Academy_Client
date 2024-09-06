@@ -7,7 +7,7 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div className="bg-[#16325B] bg-opacity-85">
             <Banner></Banner>
             <Counting></Counting>
             <ArtWork></ArtWork>
