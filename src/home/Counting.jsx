@@ -1,7 +1,7 @@
 import CountUp from 'react-countup';
 import { PiPersonArmsSpreadDuotone, PiStudentDuotone } from "react-icons/pi";
 import { LiaBookReaderSolid } from "react-icons/lia";
-import { FaAddressBook, FaAddressCard } from 'react-icons/fa';
+import {  FaAddressCard } from 'react-icons/fa';
 
 
 
